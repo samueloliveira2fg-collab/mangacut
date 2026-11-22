@@ -1,0 +1,41 @@
+export const featureRegistry = [
+  { id: 'document-core', name: 'Núcleo de documento RGB/8', status: 'implemented', module: '../core/document.js' },
+  { id: 'layer-tree', name: 'Camadas raster e grupos hierárquicos', status: 'implemented', module: '../core/document.js' },
+  { id: 'adjustment-layers', name: 'Camadas de ajuste de brilho, contraste e saturação', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'raster-mask', name: 'Máscaras raster por camada', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'alpha-channels', name: 'Canais alfa para salvar/restaurar seleções em MCUT', status: 'implemented', module: '../core/document.js' },
+  { id: 'canvas-compositor', name: 'Composição Canvas 2D e ajustes não destrutivos', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'tile-compositor', name: 'Compositor Canvas 2D com recomposição em superfícies de 256×256 px, incluindo máscaras e grupos', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'tile-cache-foundation', name: 'Cache LRU de tiles para cache persistente/incremental', status: 'partial', module: '../render/tile-cache.js' },
+  { id: 'history', name: 'Histórico híbrido: snapshots estruturais + tiles alterados em pincel/borracha/Healing', status: 'implemented', module: '../core/history.js' },
+  { id: 'paint-tools', name: 'Pincel e borracha com pressão', status: 'implemented', module: '../tools/painting.js' },
+  { id: 'clone-stamp', name: 'Carimbo de clonagem com origem definida por Alt+clique', status: 'implemented', module: '../tools/clone.js' },
+  { id: 'adjustment-presets', name: 'Ajustes não destrutivos: sépia, limiar e posterização', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'selection', name: 'Retângulo, elipse, laço, varinha e seleção rápida por cor/local', status: 'implemented', module: '../tools/selection.js' },
+  { id: 'selection-refine', name: 'Inverter, feather e refinamento de bordas com blur e curva de contraste', status: 'implemented', module: '../tools/selection.js' },
+  { id: 'basic-filters', name: 'Filtros básicos destrutivos', status: 'implemented', module: '../tools/filters.js' },
+  { id: 'mcut-format', name: 'Projeto MCUT v3 com ajustes e canais alfa', status: 'implemented', module: '../io/project.js' },
+  { id: 'png-export', name: 'Exportação PNG composto', status: 'implemented', module: '../io/images.js' },
+  { id: 'psd-psb-composite', name: 'Importação da imagem composta PSD/PSB RGB/grayscale 8-bit (fallback)', status: 'implemented', module: '../io/psd.js' },
+  { id: 'psd-layer-import', name: 'Importação parcial de camadas raster, nomes Unicode, offsets, opacidade e grupos básicos PSD/PSB', status: 'partial', module: '../io/psd.js' },
+  { id: 'psd-layer-masks', name: 'Importação de máscaras raster PSD alinhadas à camada', status: 'partial', module: '../io/psd.js' },
+  { id: 'psd-psb-export', name: 'Exportação PSD em camadas RGB/Gray 8-bit; PSB achatado RGB/Gray 8-bit', status: 'partial', module: '../io/psd.js' },
+  { id: 'psd-layer-export', name: 'Exportação PSD com camadas raster, grupos, máscaras raster, texto rasterizado e ajustes incorporados ao composto', status: 'partial', module: '../io/psd.js' },
+  { id: 'psd-advanced-records', name: 'Blocos PSD de ajuste, clipping, estilos, texto, vetores e Smart Objects', status: 'planned', module: '../io/psd.js' },
+  { id: 'vector-path-engine', name: 'Motor de caminhos vetoriais: âncoras, alças Bézier, amostragem e exportação SVG (UI pendente)', status: 'partial', module: '../tools/paths.js' },
+  { id: 'vector-tools', name: 'Caneta vetorial básica com nós, alças Bézier, fechamento de caminhos e exportação SVG (caminhos temporários da sessão)', status: 'partial', module: '../tools/paths.js' },
+  { id: 'editable-type', name: 'Camadas de texto editáveis básicas (conteúdo, família, peso, tamanho e cor editáveis)', status: 'partial', module: '../render/compositor.js' },
+  { id: 'layer-transform', name: 'Transformação por camada com alças de escala e rotação, posição numérica e espelhamento', status: 'implemented', module: '../render/compositor.js' },
+  { id: 'autosave-recovery', name: 'Autosave IndexedDB com superfícies PNG em Blob, metadados separados e compatibilidade com recuperação V6', status: 'implemented', module: '../io/autosave.js' },
+  { id: 'healing-brush', name: 'Healing localizado por patch com correspondência tonal, feather e suporte à seleção', status: 'partial', module: '../tools/healing.js' },
+  { id: 'advanced-adjustments', name: 'Curves, Levels, Hue/Saturation e filtros não destrutivos', status: 'planned', module: '../render/' },
+  { id: 'gpu-renderer', name: 'WebGPU/WASM, worker e renderização por tiles', status: 'planned', module: '../render/' },
+  { id: 'ai-local-backend', name: 'Backend local ISNet/ONNX herdado da V1 (inferência disponível; interface ainda não conectada)', status: 'partial', module: '../../ai/backend/ai_service.py' },
+  { id: 'ai-training-pipeline', name: 'Preparação de dataset e fine-tuning supervisionado herdados da V1 (requer pares imagem/máscara revisados)', status: 'partial', module: '../../ai/training/' },
+  { id: 'ai-segmentation', name: 'Integração da segmentação IA à interface do editor e criação de máscara revisável', status: 'planned', module: '../ai/' },
+  { id: 'icc-cmyk', name: 'Perfis ICC, CMYK/Lab e profundidade 16/32 bits', status: 'planned', module: '../io/' }
+];
+
+export function getFeatures(status) {
+  return status ? featureRegistry.filter(feature => feature.status === status) : [...featureRegistry];
+}
