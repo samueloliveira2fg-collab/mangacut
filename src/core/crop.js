@@ -31,7 +31,7 @@ function hasTransform(layer) {
     || Math.abs(Number(layer.rotation ?? 0)) > 1e-9;
 }
 
-export function cropDocumentToSelection(doc, mask) {
+export function cropDocumentToSelection(doc, mask, { dryRun = false } = {}) {
   if (!doc || !Array.isArray(doc.layers)) throw new TypeError('Documento inválido.');
   if (mask?.width !== doc.width || mask?.height !== doc.height) {
     throw new Error('A seleção não corresponde ao tamanho do documento.');
@@ -43,6 +43,7 @@ export function cropDocumentToSelection(doc, mask) {
   }
 
   const { left, top, width, height } = bounds;
+  if (dryRun) return { cropped: true, ...bounds };
   for (const layer of doc.layers) {
     if (layer.type === 'text') {
       layer.x = Number(layer.x || 0) - left;

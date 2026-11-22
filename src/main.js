@@ -548,7 +548,7 @@ function runAction(action) {
     case 'fit': fit(); break;
     case 'cropSelection': {
       if (!state.doc || !state.selectionMask) { toast('Crie uma seleção antes de recortar.'); break; }
-      const result = cropDocumentToSelection(state.doc, state.selectionMask);
+      const result = cropDocumentToSelection(state.doc, state.selectionMask, { dryRun: true });
       if (!result.cropped) {
         toast(result.reason === 'transformed'
           ? 'Recorte indisponível: redefina escala e rotação das camadas primeiro.'
@@ -556,6 +556,7 @@ function runAction(action) {
         break;
       }
       checkpoint('Recortar para seleção');
+      cropDocumentToSelection(state.doc, state.selectionMask);
       state.selectionMask = null; state.selectionRect = null; state.selectionStart = null;
       commit('Documento recortado para a seleção'); fit();
       break;
