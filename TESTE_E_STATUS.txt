@@ -1,0 +1,48 @@
+MANGACUT STUDIO 2.0 — V23 / RELATÓRIO DE TESTES
+==============================================
+
+[OK] 24 testes automatizados passaram, 0 falharam.
+[OK] 18 módulos JavaScript passaram em npm run check.
+[OK] IDs estáticos referenciados pelo JavaScript conferidos contra index.html: nenhum ausente.
+[OK] Testes de Healing: correspondência tonal/transferência de textura, respeito à máscara de seleção e opacidade do pincel.
+[OK] Testes PSD: grupos, raster, máscara, Unicode, texto rasterizado e ajustes incorporados em composto visível com camadas-fonte ocultas.
+[OK] Teste de planejamento do compositor: tiles cobrem documento sem ultrapassar bordas e cada superfície é limitada a 256 px.
+[OK] Compositor atualizado para recomposição síncrona em tiles Canvas 2D de 256 px; superfícies de máscara/grupo também são tile-sized.
+[OK] Transformação livre: alças de escala/rotação integradas ao overlay; posição e demais parâmetros continuam no painel.
+[OK] Refinar borda integrado ao menu Seleção.
+
+LIMITAÇÕES / TESTES PENDENTES
+-----------------------------
+- Chromium headless expirou na inicialização do navegador neste ambiente; não foi possível validar interação visual automatizada.
+- Não foi testado PSD exportado em Photoshop, GIMP, Krita ou Affinity. Os round-trips automatizados usam o parser do MangaCut.
+- Healing é retouch local por patch com correspondência tonal; não é algoritmo content-aware avançado nem IA. Limite de 12 MP por camada.
+- Transformação livre possui handles para escala e rotação; grupos e transformação de seleção não estão implementados. Caixa de texto utiliza métrica do browser.
+- Refinamento usa blur + curva de contraste, não edge-aware nem segmentação.
+- Compositor é síncrono Canvas2D por tiles; canvas de cada camada ainda ocupa resolução completa. Sem WebGPU, Workers ou WASM.
+- PSD export rasteriza textos; quando há ajustes, grava um composto visível e esconde as camadas-fonte para preservar aparência. Ajustes não ficam editáveis.
+- PSB export continua achatado. PSD em camadas ainda é subset RGB/8-bit.
+- Sem Smart Objects, clipping avançado, estilos, caneta/vetores, crop avançado, ICC/CMYK/Lab/16/32-bit ou IA.
+- Operações estruturais e filtros ainda usam snapshots completos; o histórico por tiles é usado em pintura, borracha e Healing.
+
+V9 (dev.9):
+- Healing por patch com matching tonal, feather, selection e tile undo.
+- Handles de transformação livre com escala X/Y e rotação.
+- Refinamento de máscara de seleção com blur e curva de contraste.
+- Compositor Canvas2D síncrono dividido em tiles de 256 × 256 px, com superfícies temporárias de máscara/grupo limitadas ao tile.
+- Exportação PSD rasteriza camadas de texto; ajustes viram camada composta visível e camadas-fonte ocultas.
+
+
+V10 — 2026-11-21
+- PSD mask geometry conversion: PASS (synthetic fixtures).
+- PSD relative/inverted mask flags: PASS (synthetic fixture).
+- PSD global-mask fallback: PASS (synthetic fixture).
+- Full automated suite: 27/27 PASS.
+- JavaScript syntax check: 18/18 PASS.
+- Interactive browser preview: NOT RUN (browser preview service unavailable).
+- External Photoshop/GIMP/Krita round-trip: NOT RUN.
+
+
+V23 — Caneta vetorial inicial
+- Caneta com nós e alças Bézier: implementada (interação de navegador ainda requer validação manual).
+- Fechar caminho, finalizar com Enter, cancelar com Esc e exportar SVG: implementados.
+- Persistência de caminhos em MCUT/PSD: pendente.

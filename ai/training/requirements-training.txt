@@ -1,0 +1,13 @@
+# Instale PyTorch primeiro conforme a CPU/GPU do computador:
+# https://pytorch.org/get-started/locally/
+# Depois execute: pip install -r requirements-training.txt
+numpy<2
+opencv-python>=4.9,<5
+Pillow>=10,<13
+scipy>=1.10
+pytorch-lightning>=2.0,<3
+kornia>=0.7
+timm>=0.9
+huggingface_hub>=0.22,<2
+onnx>=1.14
+onnxsim>=0.4

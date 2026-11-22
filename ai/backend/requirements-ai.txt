@@ -1,0 +1,9 @@
+# Runtime local de inferência — Python 3.10 ou 3.11 recomendado
+numpy<2
+fastapi>=0.110,<1
+uvicorn[standard]>=0.27,<1
+python-multipart>=0.0.9
+onnxruntime>=1.17,<2
+huggingface_hub>=0.22,<2
+opencv-python-headless>=4.9,<5
+Pillow>=10,<13

@@ -1,0 +1,16 @@
+MangaCut Studio 2.0 — Photoshop Edition
+Copyright (C) 2026 MangaCut Studio contributors.
+
+This is an independent image editor project. It is not affiliated with,
+endorsed by, or sponsored by Adobe Inc. or the makers of Adobe Photoshop.
+No Adobe Photoshop source code, proprietary build, trademark artwork, or
+proprietary asset is included in this release.
+
+The project source code is licensed under GNU AGPL-3.0-only. See LICENSE and
+the official text at https://www.gnu.org/licenses/agpl-3.0.html.
+
+The current V10 contains original project code only and has no runtime
+third-party runtime dependencies. PSD/PSB parsing and writing are independent partial
+implementations based on public file-format structure. The V10 compositor uses tiled
+Canvas 2D surfaces; it is not a WebGPU or WebAssembly renderer. A record of investigated but not incorporated
+projects is available in TERCEIROS_E_LICENCAS.md.

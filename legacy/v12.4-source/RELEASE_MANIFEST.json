@@ -1,0 +1,440 @@
+{
+  "product": "MangaCut Studio",
+  "version": "V12.4 Transform Tools Fix",
+  "base": "MangaCut_Studio_V12_3_GRAYSCALE_NATIVE.zip",
+  "date": "2026-11-17",
+  "changes": [
+    "map pointer coordinates through inverse layer translation, scale, rotation and flip",
+    "make object selection, mask preview and selection overlay follow transformed layer coordinates",
+    "make brush cursor reflect layer scale and rotation",
+    "reuse transform matrix once per overlay frame",
+    "add automated transform-coordinate regression test",
+    "add complementary open-source code and license research; no external code copied or integrated"
+  ],
+  "real_user_psd_tests": {
+    "files": 54,
+    "import_passed": 54,
+    "import_failed": 0,
+    "raster_layers": 470,
+    "groups": 55,
+    "flattened": 0,
+    "roundtrip_passed": 5,
+    "roundtrip_failed": 0,
+    "roundtrip_pending": [
+      "loki puto.psd"
+    ]
+  },
+  "transform_tool_tests": {
+    "identity_translation": "PASS",
+    "scale": "PASS",
+    "rotation": "PASS",
+    "flip": "PASS",
+    "bounds": "PASS",
+    "mask_preview_overlay_inspector_object_selection": "PASS_CODE_CHECKS"
+  },
+  "javascript_inline_scripts_syntax": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "interactive_browser_test": "not completed; local browser navigation is blocked in the current environment",
+  "anime_segmentation": "existing local integration preserved; no inference or training performed",
+  "trained_on_user_panels": false,
+  "training_run_performed": false,
+  "optimization_refactor_performed": false,
+  "rgb16_psd_complete": false,
+  "psb_support": false,
+  "external_code_integrated": false,
+  "files": [
+    {
+      "path": "AUDITORIA_TECNICA_V12.md",
+      "size_bytes": 10695,
+      "sha256": "0818ae6695560a63b3306a72aa073dc5aa1b68434ec1a31636b471bb7f0e2ecb"
+    },
+    {
+      "path": "AUDITORIA_TECNICA_V12_1.md",
+      "size_bytes": 5616,
+      "sha256": "9785957e92c72c4f1fe385206b3e76908f4ecb6d506ea207b5d797ba3a25f0aa"
+    },
+    {
+      "path": "AUDITORIA_TECNICA_V12_2.md",
+      "size_bytes": 4650,
+      "sha256": "99c42693b6f83b0ab77d349e0bd50c194d774bea8351b3519e22784f5826440d"
+    },
+    {
+      "path": "AUDITORIA_TECNICA_V12_3.md",
+      "size_bytes": 5084,
+      "sha256": "aec9ec87db4019e5bbdf5045cbf9cca4268ceb420fdc61699064dedc4585dfff"
+    },
+    {
+      "path": "AUDITORIA_TECNICA_V12_4.md",
+      "size_bytes": 5638,
+      "sha256": "80262e0f7a5550109c48454c95dc4ac11a069542efebed0212eb3720976360bb"
+    },
+    {
+      "path": "COMECE_AQUI.md",
+      "size_bytes": 1437,
+      "sha256": "035c8d1afc1659e2d7f4646bf06a88d5aa50266968310dd70331a3630409fe67"
+    },
+    {
+      "path": "Editor_V10_Preview.png",
+      "size_bytes": 205204,
+      "sha256": "61540a8658d083e2157f0c36a52f9aaf5fc95763fed250f40dd396ff720ea0d9"
+    },
+    {
+      "path": "LEIA-ME-UI-FIX.txt",
+      "size_bytes": 515,
+      "sha256": "69c581c68c93523371de6c6022a019455fea4e325d2427cb3368b7906349aea4"
+    },
+    {
+      "path": "LEIA-ME_V10.txt",
+      "size_bytes": 4820,
+      "sha256": "4d1ed115d1db7f8b02470e01da7cfec77a4ed7acb9ba1e391d343d90a605cdf3"
+    },
+    {
+      "path": "Menus_V11_1.png",
+      "size_bytes": 259547,
+      "sha256": "287747cc74c5276e11d9564350dd6414ac247e8b0e478e0c0d619a6474da6727"
+    },
+    {
+      "path": "PESQUISA_CODIGO_E_LICENCAS.md",
+      "size_bytes": 4360,
+      "sha256": "0bfc5c83ae053ae8387a841ad849de46f7aabe7c9ff33a0d40815cad69719643"
+    },
+    {
+      "path": "PESQUISA_COMPLEMENTAR_CODIGO_17_11_2026.md",
+      "size_bytes": 3987,
+      "sha256": "a5569b75e829e219fe1444e73be238c382f4a6e9f491cf2d9d4dc976b93dc405"
+    },
+    {
+      "path": "PSD_V10_Preview.png",
+      "size_bytes": 256586,
+      "sha256": "b934d28157071678265b95e3dfec774381f52a8ec5b268a8089f0a54cf3ee612"
+    },
+    {
+      "path": "PSD_V10_roundtrip.psd",
+      "size_bytes": 2725334,
+      "sha256": "22f4f711f34a25db539c3c6926d4f7e25f0a3f8ec135d211bebbfddfcd8855ec"
+    },
+    {
+      "path": "RESULTADOS_TESTES_V10.txt",
+      "size_bytes": 851,
+      "sha256": "6b9feccd44c82ee22ed61da36a087491acc12dce249811965673090657546958"
+    },
+    {
+      "path": "ai_backend/README_IA_LOCAL.md",
+      "size_bytes": 2640,
+      "sha256": "0bb1e9ae520c647ba9a547a8b2ab349655b846a7d1032e672f8bbefb8ea77947"
+    },
+    {
+      "path": "ai_backend/ai_service.py",
+      "size_bytes": 10703,
+      "sha256": "e3454e8a47a3fe8ce4451da6874258a84718dc5cd594ecfbb1674a738c01efbf"
+    },
+    {
+      "path": "ai_backend/iniciar_ia_windows.bat",
+      "size_bytes": 995,
+      "sha256": "9710d31f0f184e229f40e3bda826981b15c156aea093c339a762a43fba9279cb"
+    },
+    {
+      "path": "ai_backend/requirements-ai.txt",
+      "size_bytes": 236,
+      "sha256": "ac402eef901b08dbac8c76b4461eab7bf008eb1a6c9e36f56ad42f008b359a1e"
+    },
+    {
+      "path": "ai_backend/test_ai_service.py",
+      "size_bytes": 2843,
+      "sha256": "8a539924ea6d4ffafd68a320e050e2e18f41eb6f181a1ee62803c99089e50553"
+    },
+    {
+      "path": "ai_training/preparar_dados_windows.bat",
+      "size_bytes": 449,
+      "sha256": "79ccbdda94940bfad16d9d0df594b94c1a21283ef84dcb776ee7685f31d3479f"
+    },
+    {
+      "path": "ai_training/prepare_dataset.py",
+      "size_bytes": 6334,
+      "sha256": "e3a4c2d747396288480562a56f7318f6b3c09467a5af39742e27198e33b94515"
+    },
+    {
+      "path": "ai_training/requirements-training.txt",
+      "size_bytes": 317,
+      "sha256": "190eb654c50316a0c0533d6c9b99981da403798e91ce1eb37369bb647ff3dae1"
+    },
+    {
+      "path": "ai_training/run_finetune.py",
+      "size_bytes": 6595,
+      "sha256": "1445a9140292142f0b0ea063148ce8b74dc79b57408db228784fed156ffb39ff"
+    },
+    {
+      "path": "ai_training/treinar_ia_windows.bat",
+      "size_bytes": 841,
+      "sha256": "dec16bf1f996370f5be74db200345a16a770c3cbf4175a25238dd337654c4e04"
+    },
+    {
+      "path": "exemplos/painel_01.jpg",
+      "size_bytes": 24866,
+      "sha256": "fb260496e08038b78ecec1f92c1b17d24c6c65287e6c1d5a6c5e4db3d6b7172f"
+    },
+    {
+      "path": "exemplos/painel_02.jpg",
+      "size_bytes": 149480,
+      "sha256": "973da4b74f59bdd99e56f7d60ffd085e72e235cc96daaaef64e7f0ea07f73721"
+    },
+    {
+      "path": "exemplos/painel_03.jpg",
+      "size_bytes": 20527,
+      "sha256": "a363541a38eab10d7274360ea08d7f8dbbd28767d7445a1eee09b7c27e06d890"
+    },
+    {
+      "path": "exemplos/painel_04.jpg",
+      "size_bytes": 255547,
+      "sha256": "6baa70d462b46df6e4f94514a5bf182b2ea992aa867e89113cfba2f797f22332"
+    },
+    {
+      "path": "exemplos/painel_05.jpg",
+      "size_bytes": 241850,
+      "sha256": "aa997e53259ab706d980a9969aea36e50fd7fc7384d8b021dbec429645f5d02f"
+    },
+    {
+      "path": "exemplos/painel_06.jpg",
+      "size_bytes": 236169,
+      "sha256": "4be2fdd6193a8f7c38c05990a5e842f981c5f27f3532c7b86b1f746a73fd5b74"
+    },
+    {
+      "path": "exemplos/painel_07.jpg",
+      "size_bytes": 237557,
+      "sha256": "302bca163ccf020ec0babce857170e36038a42d291ca7ad4ae3ba110a14834d3"
+    },
+    {
+      "path": "exemplos/painel_08.jpg",
+      "size_bytes": 81289,
+      "sha256": "e53980532e5f89b44a791c6b8f354686e1b439365e6dbcf7d45d09351ef1bebf"
+    },
+    {
+      "path": "exemplos/painel_09.jpg",
+      "size_bytes": 10781,
+      "sha256": "51ecf1b9950c7fc5e6bd006b1fd220d9b84eaf968f2f04ffa7fed725050c5c52"
+    },
+    {
+      "path": "exemplos/painel_10.jpg",
+      "size_bytes": 316990,
+      "sha256": "8a55dbd4455ddb911affd4c242f902019aacbf124ce3eed63b0cabfc31624899"
+    },
+    {
+      "path": "exemplos/painel_11.jpg",
+      "size_bytes": 305518,
+      "sha256": "b5aa229f656284f39af9f82d3db3983793b67da5f5b889bb83579cc4dc95fb93"
+    },
+    {
+      "path": "exemplos/painel_12.jpg",
+      "size_bytes": 395425,
+      "sha256": "8b6e8a66bdb6fce73f308e20bcdc76ffe95de178df4ca75b9e1c74aefc3944f8"
+    },
+    {
+      "path": "exemplos/painel_13.jpg",
+      "size_bytes": 387511,
+      "sha256": "50320fd65870ea464c61d8a6d5797ea0cd11967cf9ea188c0bcd79754ee10609"
+    },
+    {
+      "path": "exemplos/painel_14.jpg",
+      "size_bytes": 328496,
+      "sha256": "20f7d1ae5d748e1b1860dac2ff167684e5c10f1c8172a71a81bbaaafffc35d66"
+    },
+    {
+      "path": "exemplos/painel_15.jpg",
+      "size_bytes": 320892,
+      "sha256": "14becdb9ce2b6a92d580f40d458d4aefd5dac2064faa022ce7b9b2014fe8a8ea"
+    },
+    {
+      "path": "exemplos/painel_16.jpg",
+      "size_bytes": 350782,
+      "sha256": "09a7cc56e078e4df7014dfdc093c77dbd5d1490924272f382f9a0e111cb27f03"
+    },
+    {
+      "path": "exemplos/painel_17.jpg",
+      "size_bytes": 212458,
+      "sha256": "1b98a6fab6a49a38d29edcf9240337b8b664304cacbfaa69680c9757b20e18cf"
+    },
+    {
+      "path": "exemplos/painel_18.jpg",
+      "size_bytes": 100986,
+      "sha256": "8eb9cded5c726b6a816cbd52e2acd5b5f0c1534babd6750b6b7e64274f3720f4"
+    },
+    {
+      "path": "exemplos/painel_19.jpg",
+      "size_bytes": 18913,
+      "sha256": "6f941d2864b5f47b80250f40cddbbb86e69cad8fc13b14851bda958d951ab26c"
+    },
+    {
+      "path": "exemplos/painel_20.png",
+      "size_bytes": 2910834,
+      "sha256": "0ddf8a25d34d83a209956fc3aa128bafb0036cc1a076e7fb40acb342a8bbb659"
+    },
+    {
+      "path": "exemplos/painel_21.jpg",
+      "size_bytes": 677285,
+      "sha256": "0bd2d436732cf4336ddcd4c996543c32fe87dc30b89e65c3bcf8ae4fdec96224"
+    },
+    {
+      "path": "exemplos/painel_22.jpg",
+      "size_bytes": 61093,
+      "sha256": "4505474b9da41cf214a0642c311bb8e4fb360a6fc4271c64d2a12cba994b8636"
+    },
+    {
+      "path": "exemplos/painel_23.jpg",
+      "size_bytes": 67023,
+      "sha256": "0fdc0953c3cde31cf117338311c910a157f22666a711fcd07030cedd419a57ea"
+    },
+    {
+      "path": "exemplos/painel_24.jpg",
+      "size_bytes": 20531,
+      "sha256": "1414612745ff7a21a3a6d998a8b5a8955d48999bc538fad27741263c881f7db8"
+    },
+    {
+      "path": "exemplos/painel_25.jpg",
+      "size_bytes": 81935,
+      "sha256": "cb4ccb1caa73319a239e72b6729e40e0da72e156d4173302555c8cf1c49588d9"
+    },
+    {
+      "path": "exemplos/painel_26.jpg",
+      "size_bytes": 54693,
+      "sha256": "ebbdad8e219205003c5fb10c6b16e37230a81a723fc2428f6e636981847dd413"
+    },
+    {
+      "path": "exemplos/painel_27.jpg",
+      "size_bytes": 70753,
+      "sha256": "a66ffa2d0c4c29bbfc7d410e638d8a4154e96aadae3d8e0d70a62b4e4d50b2da"
+    },
+    {
+      "path": "exemplos/painel_28.jpg",
+      "size_bytes": 74140,
+      "sha256": "31bdbaf5bb8d762579bf86ee5ff5b78ce2702893535eafa5a66e32582186e8c1"
+    },
+    {
+      "path": "exemplos/painel_29.jpg",
+      "size_bytes": 64908,
+      "sha256": "35fcae3cd5c55471bb0b3af715345ea7da5b36c4bf6ad6b2f15105f4d3902e5c"
+    },
+    {
+      "path": "exemplos/painel_30.jpg",
+      "size_bytes": 78423,
+      "sha256": "f31d8b0286cb1ee1f33b48a603e38afc8706fd66dd6550aa39de48492862f0e5"
+    },
+    {
+      "path": "exemplos/painel_31.jpg",
+      "size_bytes": 89094,
+      "sha256": "64c53bdd4894a8c31f26a6374213310a49ca890706a1fdc79efd7f9b7e5d6b00"
+    },
+    {
+      "path": "exemplos/painel_32.jpg",
+      "size_bytes": 56530,
+      "sha256": "09a40dfb3b695ed276d54e6c34371b4fcfa208a744af80ebedb2ee806dac0a37"
+    },
+    {
+      "path": "exemplos/painel_33.jpg",
+      "size_bytes": 41502,
+      "sha256": "58b1f5a5f3feebdb06f34b7dff129710df7103a08e4c6ec96635c701f89cc6af"
+    },
+    {
+      "path": "exemplos/painel_34.jpg",
+      "size_bytes": 840199,
+      "sha256": "3d6a9eefc2208e15d778aea7cd967df892bee03c5c23a1f9a68cd2f3df11f6f5"
+    },
+    {
+      "path": "exemplos/painel_35.png",
+      "size_bytes": 7174829,
+      "sha256": "f59d0101a69f8a7de9aacd7e53f55ba988152865b3aa5c86bfd52a2aabf3e033"
+    },
+    {
+      "path": "exemplos/painel_36.jpg",
+      "size_bytes": 905464,
+      "sha256": "63b692199706202883b773ba231109000d121e06aa979b0ed73099abbaa0af26"
+    },
+    {
+      "path": "exemplos/painel_37.jpg",
+      "size_bytes": 1106928,
+      "sha256": "b4d26e11e98ec9a74dd8d0d7eaa4041c2711f209fec6b0b1c60e24c4fae79a3e"
+    },
+    {
+      "path": "exemplos/painel_38.jpg",
+      "size_bytes": 796058,
+      "sha256": "40cde585260528a82e9ae018db1a923574776e9f35b1df786fe1ebec9f705629"
+    },
+    {
+      "path": "exemplos/painel_39.jpg",
+      "size_bytes": 607638,
+      "sha256": "3e380688fb8229370d8ee49fb3bb2d7c19391626e5a1bbf20d536e3c1db574a3"
+    },
+    {
+      "path": "export_quarter.png",
+      "size_bytes": 1189,
+      "sha256": "ea62e9731bcd71f375631919824a1a5e86685a5205843484c36318334bc1b957"
+    },
+    {
+      "path": "export_test.png",
+      "size_bytes": 5943,
+      "sha256": "715963d83e846c56d76740ec1b23b8f20134411fd523902bd812f5c26fa3e409"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 240621,
+      "sha256": "0b94bd0870507dd76d61613a992535e050f53d074e21990bae17fcdfebf15bc7"
+    },
+    {
+      "path": "test_image.png",
+      "size_bytes": 683,
+      "sha256": "ced273e1d5cb5a983a828b5c2eff0568517b70a460f6e057bf4754c799dcb957"
+    },
+    {
+      "path": "test_path.svg",
+      "size_bytes": 251,
+      "sha256": "3d1cf005a306d3ce3b982b570460c51e9218dbd211887089297a8ed89dc1dfcd"
+    },
+    {
+      "path": "tests/psd_inputs/README.md",
+      "size_bytes": 229,
+      "sha256": "17c445a512d792fe1df0b472b29a873d0defc222ed321c6330a3a41902e295bc"
+    },
+    {
+      "path": "tests/psd_inputs_README.md",
+      "size_bytes": 497,
+      "sha256": "fe9c10778ac8334d1b6a3fca81076745bc54f4fda979f2e73ca36caedb30bebc"
+    },
+    {
+      "path": "tests/real_psd_import_results.json",
+      "size_bytes": 13977,
+      "sha256": "c1380f9615e682680e778359c9b007f4afe4628f20936cc92665f5c530644f31"
+    },
+    {
+      "path": "tests/real_psd_roundtrip_results.json",
+      "size_bytes": 1494,
+      "sha256": "449741a7a828b310797862b2879dbc447a0e7dd84db7df0f6f61105c5b27b47a"
+    },
+    {
+      "path": "tests/test_grayscale_native.cjs",
+      "size_bytes": 1698,
+      "sha256": "f7e127eefb9b97952cee5c3bbdc2a539406d9c6d0545734c4e7b4399e098ac3c"
+    },
+    {
+      "path": "tests/test_psd_engine.cjs",
+      "size_bytes": 3580,
+      "sha256": "fff99e1abcff1d55ce1f66d6a05fc4d2aa9b39978e35f81937e7b8bd2cfbc622"
+    },
+    {
+      "path": "tests/test_real_psds.cjs",
+      "size_bytes": 2774,
+      "sha256": "ee05dccf953bd84fe7cadffc201af7b4f79ad61304e5caf7def524c0fba422b6"
+    },
+    {
+      "path": "tests/test_real_roundtrip.cjs",
+      "size_bytes": 3714,
+      "sha256": "6ec3993b1b5531023b257d824bcca91d1ff1ceff7a0ebd884575780658a66425"
+    },
+    {
+      "path": "tests/test_transform_coordinates.cjs",
+      "size_bytes": 3009,
+      "sha256": "a92f40e095f35681c933cb8f4c0df471ae6abf88eabd5770bc86dc2b5cc11351"
+    }
+  ]
+}

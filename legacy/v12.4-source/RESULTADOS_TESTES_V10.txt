@@ -1,0 +1,10 @@
+V10 – testes executados no Chromium via renderização do HTML e carregamento local de arquivos:
+✓ JavaScript: 2 blocos válidos.
+✓ Interface: controles de pincel, máscara e créditos encontrados.
+✓ PNG 260×190 aberto; aerógrafo, fluxo, opacidade, dureza e suavização aplicados sem erros de execução.
+✓ Máscara editada e exibida; exportação PNG 260×190 após edição.
+✓ PSD Luffy Gear importado com 5 camadas, exportado e importado novamente com 5 camadas; 735×630.
+✓ PSD Gojo Combat importado com 23 camadas e 5 pastas; 2457×1628.
+✓ SVG vetorial exportado de caminho da Caneta com 4 pontos.
+✓ Seleção de prévia Quarter manteve exportação PNG 260×190.
+NÃO testado nesta V10: fidelidade visual perfeita de objetos inteligentes e efeitos do Photoshop, exportação de máscaras PSD editáveis, PSB, 16-bit e CMYK.
