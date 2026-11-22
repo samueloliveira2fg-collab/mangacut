@@ -14,6 +14,7 @@ import { bindMenus } from './ui/menus.js';
 import { importPsdFile, exportPsd } from './io/psd.js';
 import { saveRecoveryPoint, loadRecoveryPoint } from './io/autosave.js';
 import { createPath, addAnchor, updateAnchor, exportPathsSvg } from './tools/paths.js';
+import { cropDocumentToSelection } from './core/crop.js';
 
 const preview = $('previewCanvas');
 const previewCtx = preview.getContext('2d');
@@ -545,6 +546,20 @@ function runAction(action) {
     case 'delete': deleteActive(); break;
     case 'merge': mergeDown(); break;
     case 'fit': fit(); break;
+    case 'cropSelection': {
+      if (!state.doc || !state.selectionMask) { toast('Crie uma seleção antes de recortar.'); break; }
+      const result = cropDocumentToSelection(state.doc, state.selectionMask);
+      if (!result.cropped) {
+        toast(result.reason === 'transformed'
+          ? 'Recorte indisponível: redefina escala e rotação das camadas primeiro.'
+          : 'A seleção está vazia.');
+        break;
+      }
+      checkpoint('Recortar para seleção');
+      state.selectionMask = null; state.selectionRect = null; state.selectionStart = null;
+      commit('Documento recortado para a seleção'); fit();
+      break;
+    }
     case 'zoom100': setZoom(1); break;
     case 'zoom50': setZoom(0.5); break;
     case 'marquee': setTool('marquee'); break;

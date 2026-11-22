@@ -3,7 +3,7 @@ import { $ } from '../core/state.js';
 const menus = {
   file: [['Novo documento', 'new'], ['Abrir imagem…', 'open'], ['Abrir projeto MCUT…', 'openProject'], ['sep'], ['Salvar projeto (.mcut)', 'saveProject'], ['Exportar PNG…', 'export'], ['Exportar PSD achatado…', 'exportPsd'], ['Exportar PSB achatado…', 'exportPsb'], ['Exportar caminhos SVG…', 'exportPaths']],
   edit: [['Desfazer', 'undo'], ['Refazer', 'redo'], ['sep'], ['Adicionar camada', 'newLayer'], ['Adicionar grupo', 'newGroup'], ['Adicionar camada de ajuste', 'newAdjustment'], ['Duplicar camada', 'duplicate']],
-  image: [['Ajustar à tela', 'fit'], ['Escala de cinza', 'grayscale'], ['Inverter cores', 'invert']],
+  image: [['Recortar para seleção', 'cropSelection'], ['Ajustar à tela', 'fit'], ['Escala de cinza', 'grayscale'], ['Inverter cores', 'invert']],
   layer: [['Nova camada', 'newLayer'], ['Novo grupo', 'newGroup'], ['Camada de ajuste', 'newAdjustment'], ['Adicionar máscara', 'addMask'], ['Duplicar', 'duplicate'], ['Excluir', 'delete'], ['Mesclar abaixo', 'merge']],
   select: [['Seleção retangular', 'marquee'], ['Seleção elíptica', 'ellipse'], ['Laço', 'lasso'], ['Varinha mágica', 'wand'], ['Seleção rápida', 'quick'], ['Selecionar tudo', 'selectAll'], ['Inverter seleção', 'invertSelection'], ['Suavizar borda…', 'featherSelection'], ['Refinar borda…', 'refineSelection'], ['Salvar seleção como canal…', 'saveSelection'], ['Carregar seleção…', 'loadSelection'], ['Desmarcar', 'clearSelection']],
   filter: [['Desfoque', 'blur'], ['Escala de cinza', 'grayscale'], ['Inverter', 'invert'], ['Brilho…', 'brightness']],
