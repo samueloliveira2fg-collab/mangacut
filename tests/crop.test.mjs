@@ -7,7 +7,10 @@ function fakeCanvas(width, height, pixels = null) {
     width, height, drawArgs: null,
     getContext() {
       return {
-        getImageData: () => ({ data: pixels || new Uint8ClampedArray(width * height * 4) }),
+        getImageData: (_x, y = 0, readWidth = width) => ({
+          data: pixels ? pixels.slice(y * width * 4, y * width * 4 + readWidth * 4)
+            : new Uint8ClampedArray(readWidth * 4)
+        }),
         drawImage: (...args) => { this.drawArgs = args; }
       };
     }

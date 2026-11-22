@@ -10,12 +10,14 @@ function copyCanvasRegion(source, sx, sy, width, height) {
 
 function selectionBounds(mask) {
   if (!mask?.width || !mask?.height) return null;
-  const data = mask.getContext('2d', { willReadFrequently: true })
-    .getImageData(0, 0, mask.width, mask.height).data;
+  const ctx = mask.getContext('2d', { willReadFrequently: true });
   let left = mask.width, top = mask.height, right = -1, bottom = -1;
   for (let y = 0; y < mask.height; y++) {
+    // Read one row at a time so a large selection does not allocate another
+    // full-document ImageData buffer just to find its bounds.
+    const data = ctx.getImageData(0, y, mask.width, 1).data;
     for (let x = 0; x < mask.width; x++) {
-      if (!data[(y * mask.width + x) * 4 + 3]) continue;
+      if (!data[x * 4 + 3]) continue;
       if (x < left) left = x;
       if (x > right) right = x;
       if (y < top) top = y;
